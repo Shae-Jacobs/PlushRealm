@@ -4,7 +4,7 @@
  */
 export async function up(knex) {
   return knex.schema.createTable('posts', (table) => {
-    table.increments('id').primary()
+    table.increments('id')
     table.integer('user_id')
     table.integer('likes')
     table.string('caption')

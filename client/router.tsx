@@ -4,10 +4,16 @@ import {
   createRoutesFromElements,
   Route,
 } from 'react-router-dom'
-import App from './components/App'
-
+import Posts from './components/Posts'
+import Layout from './components/Layout'
+import UserProfile from './components/UserProfile'
 const router = createBrowserRouter(
-  createRoutesFromElements([<Route path="/" element={<App />} />])
+  createRoutesFromElements([
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Posts />} />
+      <Route path="/user/:id" element={<UserProfile />} />
+    </Route>,
+  ]),
 )
 
 export default router
