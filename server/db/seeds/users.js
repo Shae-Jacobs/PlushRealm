@@ -1,9 +1,9 @@
 export async function seed(knex) {
-  // Deletes ALL existing entries
-  await knex('user').del()
+  // Deletes ALL existing entries in users table
+  await knex('users').del()
 
-  // Inserts seed entries
-  await knex('user').insert([
+  // Inserts seed entries into users table
+  await knex('users').insert([
     {
       id: 1,
       user_name: 'Kuromi',
@@ -20,7 +20,7 @@ export async function seed(knex) {
       id: 3,
       user_name: 'Totoro',
       profile_picture: 'https://imgur.com/scqAblR',
-      bio: ' 🌳 Forest Spirit | Guardian of the Woods 🌱',
+      bio: '🌳 Forest Spirit | Guardian of the Woods 🌱',
     },
   ])
 }
