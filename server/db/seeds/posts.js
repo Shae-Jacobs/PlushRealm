@@ -1,8 +1,8 @@
 export async function seed(knex) {
-  // Deletes ALL existing entries
+  // Deletes ALL existing entries in posts table
   await knex('posts').del()
 
-  // Inserts seed entries
+  // Inserts seed entries into posts table
   await knex('posts').insert([
     {
       id: 1,
