@@ -7,6 +7,7 @@ export async function up(knex) {
     table.increments('id').primary()
     table.integer('user_id')
     table.integer('likes')
+    table.string('caption')
     table.string('post_image')
     table.string('comments')
   })
