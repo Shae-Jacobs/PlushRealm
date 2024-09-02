@@ -4,11 +4,12 @@ export interface User {
   profilePicture: string
   bio?: string
 }
-export interface Posts {
-  id: number
-  username: string
+export interface PostWithUser {
+  postid: number
+  userId: number
+  userName: string
   profilePicture: string
-  likes: number
   postImage: string
-  comments: string
+  likes: number
+  caption: string
 }
