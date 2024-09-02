@@ -8,8 +8,8 @@ const server = express()
 
 server.use(express.json())
 
-server.use('/api/v1/plushiepals', postRoutes)
-server.use('/api/v1/plushiepals', userRoutes)
+server.use('/api/v1/posts', postRoutes)
+server.use('/api/v1/user', userRoutes)
 
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(Path.resolve('public')))

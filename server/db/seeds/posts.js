@@ -1,29 +1,29 @@
 export async function seed(knex) {
-  // Deletes ALL existing entries in posts table
+  // Deletes ALL existing entries
   await knex('posts').del()
 
-  // Inserts seed entries into posts table
+  // Inserts seed entries
   await knex('posts').insert([
     {
       id: 1,
       user_id: 2,
       likes: 3,
       caption: 'First post! :)',
-      post_image: 'https://imgur.com/mm5B6bw',
+      post_image: 'https://i.imgur.com/mm5B6bw.png',
     },
     {
       id: 2,
       user_id: 3,
       likes: 2,
       caption: 'Look at me! Im so handsome :3',
-      post_image: 'https://imgur.com/Q39t8HZ',
+      post_image: 'https://i.imgur.com/Q39t8HZ.png',
     },
     {
       id: 3,
       user_id: 1,
       likes: 1,
       caption: 'Getting ready to go see Kiki & Lala <3',
-      post_image: 'https://imgur.com/BYfyv2P',
+      post_image: 'https://i.imgur.com/BYfyv2P.png',
     },
   ])
 }
