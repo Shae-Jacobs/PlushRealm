@@ -1,6 +1,6 @@
 import usePosts from '../hooks/usePosts'
 import '../styles/index.scss'
-
+import { Link } from 'react-router-dom'
 export default function Posts() {
   const { data, error, isError, isPending } = usePosts()
 
@@ -17,12 +17,14 @@ export default function Posts() {
       {data.map((post) => (
         <div key={post.postid} className="post">
           <div className="post-header">
-            <img
-              src={post.profilePicture}
-              alt={`Profile of ${post.userName}`}
-              className="profile-picture"
-            />
-            <p className="username">{post.userName}</p>
+            <Link to={`/user/${post.userId}`}>
+              <img
+                src={post.profilePicture}
+                alt={`Profile of ${post.userName}`}
+                className="profile-picture"
+              />
+              <p className="username">{post.userName}</p>
+            </Link>
           </div>
           <img
             src={post.postImage}
